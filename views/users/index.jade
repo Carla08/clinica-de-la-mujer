@@ -1,0 +1,26 @@
+//Created by mario on 4/21/2016.
+extends ../shared/layout
+
+block content
+    a.waves-effect.waves-light.btn(href="new") Agregar Empleado
+        i.material-icons.left perm_identity
+    table.bordered.highlight.responsive-table.centered
+        thead
+            tr
+                th Nombre
+                th Primer apellido
+                th Segundo apellido
+                th Departamento
+                th Fecha de contratación
+                th
+        tbody
+            each employee in employees
+                tr
+                    td !{employee.name}
+                    td !{employee.lastName}
+                    td !{employee.secondLastName}
+                    td !{employee.department}
+                    td #{moment(employee.hiringDate).format("DD/MM/YYYY")}
+                    td
+                        a(href="delete/#{employee._id}" )
+                            i.material-icons.delete delete

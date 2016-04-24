@@ -1,8 +1,5 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+i.material-icons.delete{
+  color:#f44336;
 }
 
-a {
-  color: #00B7FF;
-}
