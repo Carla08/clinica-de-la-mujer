@@ -13,6 +13,7 @@ block content
                 th Departamento
                 th Fecha de contratación
                 th
+                th
         tbody
             each employee in employees
                 tr
@@ -21,6 +22,9 @@ block content
                     td !{employee.secondLastName}
                     td !{employee.department}
                     td #{moment(employee.hiringDate).format("DD/MM/YYYY")}
+                    td
+                        a(href="edit/#{employee._id}" )
+                            i.material-icons.delete mode_edit
                     td
                         a(href="delete/#{employee._id}" )
                             i.material-icons.delete delete

@@ -20,13 +20,18 @@ employeeScheme.methods.findAll= function (callback){
   this.model("Employee").find({},callback);
 };
 
-employeeScheme.methods.findUserById = (userId,callback)=>{
-  this.model("Employee").find({"_id":userId},callback);
+employeeScheme.methods.findUserById = function(userId,callback){
+  this.model("Employee").where({"_id":userId}).findOne(callback);
 };
 
 employeeScheme.methods.DeleteEmployeeById = function (userId,callback){
   this.model("Employee").remove({"_id":userId},callback);
 };
+
+employeeScheme.methods.UpdateEmployeeById = function (userId,employee,callback){
+  this.model("Employee").findByIdAndUpdate(userId,employee,callback);
+};
+
 
 module.exports = connection.model("Employee",employeeScheme);
 
